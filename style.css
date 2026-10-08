@@ -1,0 +1,239 @@
+:root {
+  --roxo: #6b3fa0;
+  --roxo-escuro: #432565;
+  --lilas: #f2eafa;
+  --rosa: #dca8d5;
+  --texto: #292332;
+  --branco: #ffffff;
+  --borda: #e3d8ec;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: #faf8fc;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+  color: white;
+  padding: 58px 20px 48px;
+  text-align: center;
+}
+
+header .icone {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 8px;
+}
+
+header p {
+  max-width: 760px;
+  margin: auto;
+  font-size: 1.08rem;
+  opacity: 0.94;
+}
+
+nav {
+  background: white;
+  border-bottom: 1px solid var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px #00000010;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: block;
+  padding: 15px 16px;
+  color: var(--roxo-escuro);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--lilas);
+  color: var(--roxo);
+}
+
+main {
+  max-width: 1100px;
+  margin: 38px auto;
+  padding: 0 20px;
+}
+
+article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 28px;
+}
+
+section,
+aside {
+  background: white;
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 25px #43256510;
+}
+
+section {
+  margin-bottom: 22px;
+}
+
+h2 {
+  color: var(--roxo-escuro);
+  margin-bottom: 14px;
+  font-size: 1.7rem;
+}
+
+h3 {
+  color: var(--roxo);
+  margin: 20px 0 8px;
+}
+
+p {
+  margin-bottom: 13px;
+}
+
+.destaque {
+  background: var(--lilas);
+  border-left: 5px solid var(--roxo);
+  padding: 18px;
+  border-radius: 10px;
+  margin: 18px 0;
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  margin: 15px 0;
+  align-items: start;
+}
+
+.ano {
+  font-weight: bold;
+  color: var(--roxo);
+  background: var(--lilas);
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+ul {
+  padding-left: 22px;
+  margin: 10px 0 15px;
+}
+
+li {
+  margin: 7px 0;
+}
+
+blockquote {
+  margin: 18px 0;
+  padding: 18px 22px;
+  background: #fbf5fb;
+  border-left: 5px solid var(--rosa);
+  font-style: italic;
+  border-radius: 8px;
+}
+
+aside {
+  height: max-content;
+  position: sticky;
+  top: 78px;
+}
+
+aside h2 {
+  font-size: 1.35rem;
+}
+
+.curiosidade {
+  background: var(--roxo);
+  color: white;
+  padding: 18px;
+  border-radius: 14px;
+  margin-top: 15px;
+}
+
+.fontes a {
+  color: var(--roxo);
+  font-weight: bold;
+}
+
+.fontes a:hover {
+  color: var(--roxo-escuro);
+}
+
+footer {
+  background: var(--roxo-escuro);
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 45px;
+}
+
+footer p {
+  margin: 4px;
+}
+
+/* Tablet e celular */
+
+@media (max-width: 800px) {
+
+  article {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    position: static;
+  }
+
+  nav a {
+    padding: 11px 9px;
+    font-size: 0.9rem;
+  }
+
+  section,
+  aside {
+    padding: 22px;
+  }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 500px) {
+
+  .linha {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  header {
+    padding: 42px 18px;
+  }
+}
