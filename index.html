@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História da Enfermagem</title>
+
+  <style>
+    :root {
+      --roxo: #6b3fa0;
+      --roxo-escuro: #432565;
+      --lilas: #f2eafa;
+      --rosa: #dca8d5;
+      --texto: #292332;
+      --branco: #fff;
+      --borda: #e3d8ec;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: #faf8fc;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+      color: white;
+      padding: 58px 20px 48px;
+      text-align: center;
+    }
+
+    header .icone {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 8px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.08rem;
+      opacity: 0.94;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--borda);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #00000010;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: block;
+      padding: 15px 16px;
+      color: var(--roxo-escuro);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: var(--lilas);
+      color: var(--roxo);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 38px auto;
+      padding: 0 20px;
+    }
+
+    article {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 28px;
+    }
+
+    section,
+    aside {
+      background: white;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 25px #43256510;
+    }
+
+    section {
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      color: var(--roxo-escuro);
+      margin-bottom: 14px;
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      color: var(--roxo);
+      margin: 20px 0 8px;
+    }
+
+    p {
+      margin-bottom: 13px;
+    }
+
+    .destaque {
+      background: var(--lilas);
+      border-left: 5px solid var(--roxo);
+      padding: 18px;
+      border-radius: 10px;
+      margin: 18px 0;
+    }
+
+    .linha {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 18px;
+      margin: 15px 0;
+      align-items: start;
+    }
+
+    .ano {
+      font-weight: bold;
+      color: var(--roxo);
+      background: var(--lilas);
+      padding: 8px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 10px 0 15px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    blockquote {
+      margin: 18px 0;
+      padding: 18px 22px;
+      background: #fbf5fb;
+      border-left: 5px solid var(--rosa);
+      font-style: italic;
+      border-radius: 8px;
+    }
+
+    aside {
+      height: max-content;
+      position: sticky;
+      top: 78px;
+    }
+
+    aside h2 {
+      font-size: 1.35rem;
+    }
+
+    .curiosidade {
+      background: var(--roxo);
+      color: white;
+      padding: 18px;
+      border-radius: 14px;
+      margin-top: 15px;
+    }
+
+    .fontes a {
+      color: var(--roxo);
+      font-weight: bold;
+    }
+
+    .fontes a:hover {
+      color: var(--roxo-escuro);
+    }
+
+    footer {
+      background: var(--roxo-escuro);
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 45px;
+    }
+
+    footer p {
+      margin: 4px;
+    }
+
+    @media (max-width: 800px) {
+      article {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+      }
+
+      nav a {
+        padding: 11px 9px;
+        font-size: 0.9rem;
+      }
+
+      section,
+      aside {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .linha {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      header {
+        padding: 42px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="inicio">
+    <div class="icone">🩺</div>
+
+    <h1>História da Enfermagem</h1>
+
+    <p>
+      Do cuidado tradicional à profissão moderna: uma viagem pelos principais
+      momentos que ajudaram a construir a Enfermagem.
+    </p>
+  </header>
+
+
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="#origem">Origem</a></li>
+      <li><a href="#florence">Florence Nightingale</a></li>
+      <li><a href="#brasil">No Brasil</a></li>
+      <li><a href="#evolucao">Evolução</a></li>
+      <li><a href="#fontes">Fontes</a></li>
+    </ul>
+  </nav>
+
+
+  <main>
+
+    <article>
+
+      <div>
+
+        <section id="origem">
+
+          <h2>As origens da Enfermagem</h2>
+
+          <p>
+            O cuidado com pessoas doentes existe desde a Antiguidade. Durante
+            muitos séculos, a assistência aos enfermos foi realizada por
+            familiares, comunidades, religiosos e outras pessoas que aprendiam
+            por meio da experiência.
+          </p>
+
+          <p>
+            Com o passar do tempo, essas práticas foram se organizando e
+            incorporando conhecimentos de higiene, observação e cuidado.
+            No século XIX, a Enfermagem começou a se estruturar como uma
+            profissão com formação sistematizada e bases científicas.
+          </p>
+
+          <div class="destaque">
+
+            <strong>Ideia principal:</strong>
+
+            a Enfermagem não surgiu de uma única pessoa. Ela foi construída
+            ao longo da história, até chegar à organização profissional que
+            conhecemos atualmente.
+
+          </div>
+
+        </section>
+
+
+        <section id="florence">
+
+          <h2>Florence Nightingale e a Enfermagem moderna</h2>
+
+          <p>
+            Florence Nightingale (1820–1910) foi uma enfermeira inglesa
+            considerada uma das principais responsáveis pela organização da
+            Enfermagem moderna. Durante a Guerra da Crimeia, ela e sua equipe
+            trabalharam para melhorar as condições de higiene e assistência
+            nos hospitais.
+          </p>
+
+          <p>
+            Florence também valorizava a observação, a organização do ambiente
+            e o uso de dados para avaliar os resultados do cuidado. Em 1860,
+            foi inaugurada a escola de Enfermagem do Hospital St. Thomas,
+            em Londres, ajudando a difundir um modelo de formação profissional.
+          </p>
+
+          <blockquote>
+            “A Enfermagem é uma arte; e para realizá-la como arte requer uma
+            devoção tão exclusiva, um preparo tão rigoroso...” —
+            ideia associada à obra de Florence Nightingale.
+          </blockquote>
+
+          <p>
+            Por suas rondas noturnas pelos hospitais, Florence ficou conhecida
+            como a <strong>“Dama da Lâmpada”</strong>.
+          </p>
+
+        </section>
+
+
+        <section id="brasil">
+
+          <h2>A Enfermagem no Brasil</h2>
+
+          <p>
+            No Brasil, a história da Enfermagem também passou por diferentes
+            fases. O cuidado aos enfermos recebeu influências indígenas,
+            africanas, europeias, religiosas e militares.
+          </p>
+
+          <p>
+            Um dos marcos da profissionalização foi a criação da
+            <strong>Escola Profissional de Enfermeiros e Enfermeiras</strong>,
+            em 1890, no Rio de Janeiro, posteriormente conhecida como
+            Escola de Enfermagem Alfredo Pinto.
+          </p>
+
+          <h3>Anna Nery</h3>
+
+          <p>
+            Anna Justina Ferreira Nery tornou-se uma personagem marcante da
+            história brasileira. Durante a Guerra do Paraguai, atuou como
+            voluntária no cuidado de feridos. Sua trajetória fez dela um
+            símbolo de dedicação à Enfermagem no país.
+          </p>
+
+          <p>
+            Em 1923, foi inaugurada no Rio de Janeiro a Escola de Enfermagem
+            Anna Nery, que adotou padrões de formação inspirados no modelo
+            de Florence Nightingale e teve grande importância para o
+            desenvolvimento do ensino de Enfermagem no Brasil.
+          </p>
+
+        </section>
+
+
+        <section id="evolucao">
+
+          <h2>A evolução da profissão</h2>
+
+          <p>
+            Ao longo do século XX e até os dias atuais, a Enfermagem ampliou
+            sua atuação. O profissional passou a participar de diferentes
+            áreas da saúde, unindo conhecimento científico, tecnologia,
+            educação e cuidado humanizado.
+          </p>
+
+          <h3>Alguns exemplos da atuação da Enfermagem:</h3>
+
+          <ul>
+
+            <li>Assistência direta aos pacientes;</li>
+
+            <li>Prevenção de doenças e promoção da saúde;</li>
+
+            <li>Educação em saúde;</li>
+
+            <li>Gestão e organização dos serviços de saúde;</li>
+
+            <li>Pesquisa e produção de conhecimento científico;</li>
+
+            <li>
+              Atuação em hospitais, unidades de saúde, escolas e outros espaços.
+            </li>
+
+          </ul>
+
+          <div class="destaque">
+
+            <strong>Hoje:</strong>
+
+            a Enfermagem é uma área essencial para o funcionamento dos
+            serviços de saúde e para a assistência integral às pessoas.
+
+          </div>
+
+        </section>
+
+
+        <section>
+
+          <h2>Principais marcos históricos</h2>
+
+          <div class="linha">
+
+            <div class="ano">1820</div>
+
+            <p>
+              <strong>Nascimento de Florence Nightingale</strong>,
+              em Florença, na Itália.
+            </p>
+
+          </div>
+
+
+          <div class="linha">
+
+            <div class="ano">1854–56</div>
+
+            <p>
+              <strong>Guerra da Crimeia:</strong>
+              Florence atua na organização do cuidado e das condições sanitárias.
+            </p>
+
+          </div>
+
+
+          <div class="linha">
+
+            <div class="ano">1860</div>
+
+            <p>
+              <strong>Escola St. Thomas:</strong>
+              início de um importante modelo de formação profissional
+              em Enfermagem.
+            </p>
+
+          </div>
+
+
+          <div class="linha">
+
+            <div class="ano">1890</div>
+
+            <p>
+              <strong>Alfredo Pinto:</strong>
+              inauguração da primeira escola de Enfermagem do Brasil,
+              segundo o Cofen.
+            </p>
+
+          </div>
+
+
+          <div class="linha">
+
+            <div class="ano">1923</div>
+
+            <p>
+              <strong>Escola Anna Nery:</strong>
+              marco da formação moderna de Enfermagem no Brasil.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <section id="fontes" class="fontes">
+
+          <h2>Fontes de pesquisa</h2>
+
+          <ul>
+
+            <li>
+              <a
+                href="https://www.cofen.gov.br/a-vida-de-florence-nightingale-a-criadora-da-moderna-enfermagem/"
+                target="_blank"
+                rel="noopener"
+              >
+                Conselho Federal de Enfermagem (Cofen) — Florence Nightingale
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.cofen.gov.br/raizes-historicas-da-profissao-primeiras-escolas-de-enfermagem-no-brasil/"
+                target="_blank"
+                rel="noopener"
+              >
+                Cofen — Primeiras escolas de Enfermagem no Brasil
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://biblioteca.cofen.gov.br/florence-nightingale-historia-da-enfermagem/"
+                target="_blank"
+                rel="noopener"
+              >
+                Biblioteca Virtual de Enfermagem — Florence Nightingale
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </div>
+
+
+      <aside>
+
+        <h2>Você sabia?</h2>
+
+        <p>
+          O símbolo da lâmpada ficou associado a Florence Nightingale porque
+          ela fazia rondas noturnas para acompanhar os pacientes.
+        </p>
+
+        <div class="curiosidade">
+
+          <strong>🩺 Por que estudar essa história?</strong>
+
+          <br>
+
+          Conhecer o passado ajuda a entender como a Enfermagem se tornou
+          uma profissão científica, organizada e essencial para a saúde.
+
+        </div>
+
+
+        <h3>Palavras-chave</h3>
+
+        <ul>
+
+          <li>Enfermagem</li>
+          <li>Florence Nightingale</li>
+          <li>Anna Nery</li>
+          <li>Saúde</li>
+          <li>Cuidado</li>
+          <li>História</li>
+
+        </ul>
+
+      </aside>
+
+    </article>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      <strong>História da Enfermagem</strong>
+    </p>
+
+    <p>
+      Projeto acadêmico • HTML5 e CSS3 • 2026
+    </p>
+
+  </footer>
+
+</body>
+</html>
